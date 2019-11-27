@@ -1,3 +1,5 @@
+package ie.group23;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -10,20 +12,22 @@ import ie.group23.services.UsersService;
 public class DataLoader implements ApplicationRunner {
 
 	@Autowired
-	UsersService countyService;
+	UsersService usersService;
 	
 //	@Autowired
 //	TownService townService;
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-//		Users John = new Users("John");
-//		Users Mary = new Users("Mary");
-//		Users Tom = new Users("Tom");
+		
+		
+		//Users John = new Users("John");
+		Users Mary = new Users("Mary", "ehtieh", "mary@hotmail", "0823409283", 1);
+		//Users Tom = new Users("Tom");
 //		
-//		UsersService.save(John);
-//		UsersService.save(Mary);
-//		UsersService.save(Tom);
+		//UsersService.save(John);
+		UsersService.save(Mary);
+		//UsersService.save(Tom);
 		
 //		townService.save(new Town("Blackrock", cork));
 //		townService.save(new Town("Wilton", cork));

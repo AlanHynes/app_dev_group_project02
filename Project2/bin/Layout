@@ -1,0 +1,20 @@
+Class design
+
+users
+	ID
+	email
+	password
+	name
+	phone number
+	if registered boolean
+	
+job
+	jobID
+	jobname
+	jobdesc
+	jobdate
+
+bid
+	bidID
+	
+	

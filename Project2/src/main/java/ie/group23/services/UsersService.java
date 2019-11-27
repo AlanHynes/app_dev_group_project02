@@ -13,6 +13,9 @@ public interface UsersService {
 	//List<County> listInAlphabeticalOrder(); 
 	//String findCountyName(int id);
 	//List<County> findCountiesWithTownName(String townName);
-	Users save(Users user);
+	static Users save(Users user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
