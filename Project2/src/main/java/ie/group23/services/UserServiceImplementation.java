@@ -17,4 +17,16 @@ public class UserServiceImplementation implements UsersService{
 		return null;
 	}
 
+	@Override
+	public Users findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Users save(Users user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
