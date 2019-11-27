@@ -10,5 +10,6 @@ import ie.group23.domain.Users;
 public class RepositoryConfig implements RepositoryRestConfigurer {
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 		config.exposeIdsFor(Users.class);
+	//	config.exposeIdsFor(domainTypes)
 	}
 }
