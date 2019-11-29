@@ -23,6 +23,6 @@ public class UsersController{
 			return "not found error";
 		}
 		model.addAttribute("user", user);
-		return "user";
+		return "users";
 	}
 }

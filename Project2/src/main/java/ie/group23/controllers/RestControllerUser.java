@@ -26,6 +26,19 @@ public class RestControllerUser {
 //	@Autowired
 //	TownService townService;
 	
+	
+	@GetMapping("users")
+	public List<Users> myRestCounties()
+	{
+		return usersService.listInAlphabeticalOrder();
+	}
+	
+	@GetMapping("users/{name}")
+	public Users findByUsersName(@PathVariable(name="name") String name)
+	{
+		return usersService.findByName(name);
+	}
+	
 	// Recall: POST is used to create a database record, PUT is used for updating a record
 //	@PostMapping("/user")
 //	public ResponseEntity<Users> addNewCounty(@RequestBody String countyName)

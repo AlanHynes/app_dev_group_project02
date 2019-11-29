@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 
 import ie.group23.domain.Users;
 import ie.group23.services.UsersService;
+import lombok.extern.slf4j.Slf4j;
 
 @Component
+@Slf4j
 public class DataLoader implements ApplicationRunner {
 
 	@Autowired
@@ -22,11 +24,12 @@ public class DataLoader implements ApplicationRunner {
 		
 		
 		//Users John = new Users("John");
-		Users Mary = new Users("Mary", "ehtieh", "mary@hotmail", "0823409283", 1);
+		Users Mary = new Users("Mary", "ehtieh", "mary@hotmail", "0823409283");
 		//Users Tom = new Users("Tom");
 //		
 		//UsersService.save(John);
-		UsersService.save(Mary);
+		Mary = usersService.save(Mary);
+		log.info("LOMBOK TESTING: " + Mary);
 		//UsersService.save(Tom);
 		
 //		townService.save(new Town("Blackrock", cork));

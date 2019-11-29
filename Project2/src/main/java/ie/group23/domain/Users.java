@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-
+@AllArgsConstructor
 public class Users {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -29,13 +30,20 @@ public class Users {
 	@Column(nullable=false)
 	private String phoneNum;
 	
-	public Users(String name, String email, String password, String phoneNum, int userID) {
+	public Users(String name, String email, String password, String phoneNum) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.phoneNum = phoneNum;
-		this.userID = userID;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder s = new StringBuilder("Users [userID=" + userID + ", name=" + name + ", email=" + email + ", password=" + password
+				+ ", phoneNum=" + phoneNum + "]");
+		
+		return s.toString();
 	}
 	
 }

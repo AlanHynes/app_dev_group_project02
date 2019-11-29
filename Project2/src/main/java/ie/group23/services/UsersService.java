@@ -10,12 +10,9 @@ public interface UsersService {
 	//boolean deleteCounty(County county);
 	//boolean deleteCounty(int id);
 	Users findByName(String name);
-	//List<County> listInAlphabeticalOrder(); 
+	List<Users> listInAlphabeticalOrder(); 
 	//String findCountyName(int id);
 	//List<County> findCountiesWithTownName(String townName);
-	static Users save(Users user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	Users save(Users user) ;
 	
 }
