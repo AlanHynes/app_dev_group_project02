@@ -5,7 +5,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import ie.group23.dao.RoleDAO;
 import ie.group23.domain.Job;
+import ie.group23.domain.Role;
 import ie.group23.domain.Users;
 import ie.group23.services.JobService;
 import ie.group23.services.UsersService;
@@ -20,21 +22,25 @@ public class DataLoader implements ApplicationRunner {
 
 	@Autowired
 	JobService jobService;
+	
+	@Autowired
+	RoleDAO roleDao;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		Role role1 = new Role("mary@hotmail","USER_ROLE");
+		roleDao.save(role1);
 
+//		Users John = new Users("John", "john@yahoo.com", "bfjkds", "0862546790");
+		Users Mary = new Users("Mary", "mary@hotmail.com", "ehtieh", "0823409283",role1,true);
+//		Users Tom = new Users("Tom", "tom@eircom.net", "gnvrwk", "0875418053");
 
-		Users John = new Users("John", "john@yahoo.com", "bfjkds", "0862546790");
-		Users Mary = new Users("Mary", "mary@hotmail.com", "ehtieh", "0823409283");
-		Users Tom = new Users("Tom", "tom@eircom.net", "gnvrwk", "0875418053");
-
-		John = usersService.save(John);
-		log.info("LOMBOK TESTING: " + John);
+//		John = usersService.save(John);
+//		log.info("LOMBOK TESTING: " + John);
 		Mary = usersService.save(Mary);
 		log.info("LOMBOK TESTING: " + Mary);
-		Tom = usersService.save(Tom);
-		log.info("LOMBOK TESTING: " + Tom);
+//		Tom = usersService.save(Tom);
+//		log.info("LOMBOK TESTING: " + Tom);
 
 		Job job1 = new Job("Bathroom Pluming", "Clogged pipes in the bathroom", "2019-11-15");
 		Job job2 = new Job("Fittings", "Wardrobe to be fitted into the bedroom", "2019-12-05");
