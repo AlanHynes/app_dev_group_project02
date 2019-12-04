@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ie.group23.domain.Job;
 import ie.group23.domain.Users;
+import ie.group23.services.JobService;
 import ie.group23.services.UsersService;
 
 @RestController	// All returned data is converted to Json format.
@@ -23,8 +25,8 @@ public class RestControllerUser {
 	@Autowired
 	UsersService usersService;
 	
-//	@Autowired
-//	TownService townService;
+	@Autowired
+	JobService jobService;
 	
 	
 	@GetMapping("users")
@@ -37,6 +39,18 @@ public class RestControllerUser {
 	public Users findByUsersName(@PathVariable(name="name") String name)
 	{
 		return usersService.findByName(name);
+	}
+	
+	@GetMapping("job")
+	public List<Job> myRestJobs()
+	{
+		return jobService.listInAlphabeticalOrder();
+	}
+	
+	@GetMapping("job/{name}")
+	public Job findByJobName(@PathVariable(name="jobName") String jobName)
+	{
+		return jobService.findByJobName(jobName);
 	}
 	
 	// Recall: POST is used to create a database record, PUT is used for updating a record

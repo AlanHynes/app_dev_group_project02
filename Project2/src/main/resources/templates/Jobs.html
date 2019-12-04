@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>Job ID</th>
+		<th>Job Name</th>
+		<th>Job Description</th>
+		<th>Job Date</th>
+	</tr>
+	<tr>
+		<td th:text="${user.jobID}">Job ID</td>
+		<td th:text="${user.jobname}">Job Name</td>
+		<td th:text="${user.jobDesc}">Job Description</td>
+		<td th:text="${user.jobDate}">Job Date</td>
+	</tr>
+</table>
+</body>
+</html>

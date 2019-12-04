@@ -27,14 +27,20 @@ public class Job {
 	@Column(nullable=false)
 	private String jobDesc;
 	@Column(nullable=false)
-	private LocalDate jobDate;
+	private String jobDate;
 	
-	public Job(int jobID, String jobname, String jobDesc, LocalDate jobDate) {
+	public Job(String jobname, String jobDesc, String jobDate) {
 		super();
-		this.jobID = jobID;
 		this.jobname = jobname;
 		this.jobDesc = jobDesc;
 		this.jobDate = jobDate;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder s = new StringBuilder("Job [jobID=" + jobID + ", jobname=" + jobname + ", jobDesc=" + jobDesc + ", jobDate=" + jobDate + "]");
+	
+		return s.toString();
 	}
 	
 }
