@@ -45,8 +45,8 @@ public class Users {
 		this.email = email;
 		this.password = password;
 		this.phoneNum = phoneNum;
-		this.userRole = userRole;
-		this.userEnabled = userEnabled;
+//		this.userRole = userRole;
+//		this.userEnabled = userEnabled;
 	}
 
 	@Override
