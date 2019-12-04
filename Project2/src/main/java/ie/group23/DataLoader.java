@@ -23,14 +23,16 @@ public class DataLoader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		
 		
-		//Users John = new Users("John");
-		Users Mary = new Users("Mary", "ehtieh", "mary@hotmail", "0823409283");
-		//Users Tom = new Users("Tom");
-//		
-		//UsersService.save(John);
+		Users John = new Users("John", "john@yahoo.com", "bfjkds", "0862546790");
+		Users Mary = new Users("Mary", "mary@hotmail.com", "ehtieh", "0823409283");
+		Users Tom = new Users("Tom", "tom@eircom.net", "gnvrwk", "0875418053");
+		
+		John = usersService.save(John);
+		log.info("LOMBOK TESTING: " + John);
 		Mary = usersService.save(Mary);
 		log.info("LOMBOK TESTING: " + Mary);
-		//UsersService.save(Tom);
+		Tom = usersService.save(Tom);
+		log.info("LOMBOK TESTING: " + Tom);
 		
 //		townService.save(new Town("Blackrock", cork));
 //		townService.save(new Town("Wilton", cork));
