@@ -39,20 +39,22 @@ public class Users {
 	@Column
 	boolean userEnabled;
 	
-	public Users(String name, String email, String password, String phoneNum) {
+	public Users(String name, String email, String password, String phoneNum, Role userRole, boolean userEnabled) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.phoneNum = phoneNum;
+		this.userRole = userRole;
+		this.userEnabled = userEnabled;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder s = new StringBuilder("Users [userID=" + userID + ", name=" + name + ", email=" + email + ", password=" + password
-				+ ", phoneNum=" + phoneNum + "]");
-		
+				+ ", phoneNum=" + phoneNum + ", userRole=" + userRole + ", userEnabled=" + userEnabled + "]");
 		return s.toString();
 	}
+
 	
 }
