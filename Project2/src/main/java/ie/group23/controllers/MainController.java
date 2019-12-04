@@ -19,16 +19,10 @@ public class MainController {
 //		return "index";
 //	}
 	
-//	@GetMapping(value= {"/", "/index"})
-//	public String handleIndexRequest()
-//	{
-//		return "index";
-//	}
-	
-	@GetMapping(value="/login")
-	public String login()
+	@GetMapping(value= {"/", "/index"})
+	public String handleIndexRequest()
 	{
-		return "login";
+		return "index";
 	}
 	
 }
