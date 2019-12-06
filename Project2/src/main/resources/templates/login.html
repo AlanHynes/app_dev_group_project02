@@ -6,7 +6,12 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 </head>
+
+<div th:insert="fragments.html :: head"></div>
+
 <body>
+	<header><div th:insert="fragments.html :: menu"></div><h1><span th:text="#{index.welcome}">WELCOME</span></h1></header>
+
 	<div class="login-page">
 		<div class="form">
 		
@@ -14,9 +19,6 @@
 			<div class="error" th:if="${param.logout}">You logged out.</div>
 			
 			<form class="login-form" method="post" th:action="@{/login}">
-			
-<!--				<label>Email: <input type="email" name="email"/></label>
-				<label>Password: <input type="password" name="password"/></label> -->
 				
 				<label><span th:text="#{login.email}">Email: </span><input type="email" name="email" /></label> 
 				<label><span th:text="#{login.password}">Password: </span><input type="password" name="password" /> </label>
