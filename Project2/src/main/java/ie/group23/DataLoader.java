@@ -33,11 +33,11 @@ public class DataLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
-		Role role1 = new Role("mary@hotmail.com","USER_ROLE");
+		Role role1 = new Role("mary@hotmail.com","ROLE_USER");
 		roleDao.save(role1);
-		Role role2 = new Role("john@yahoo.com","USER_ROLE");
+		Role role2 = new Role("john@yahoo.com","ROLE_USER");
 		roleDao.save(role2);
-		Role role3 = new Role("tom@eircom.net","USER_ROLE");
+		Role role3 = new Role("tom@eircom.net","ROLE_USER");
 		roleDao.save(role3);
 
 		Users Mary = new Users("Mary", "mary@hotmail.com", passwordEncoder.encode("password"), "0823409283", role1, true);

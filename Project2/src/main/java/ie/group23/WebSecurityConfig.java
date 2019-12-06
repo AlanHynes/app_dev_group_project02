@@ -19,13 +19,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/css/**","/","/job/**").permitAll()
+			.antMatchers("/css/**","/","/job/**","/h2/**").permitAll()
 			.antMatchers("/newjob").hasRole("USER")
+			.antMatchers("/actuator/**").hasRole("USER")
 			.antMatchers("/console/**").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").permitAll()
-			.defaultSuccessUrl("/")
-			.usernameParameter("email");
+			.defaultSuccessUrl("/", true)
+			.usernameParameter("email")
+		.and().exceptionHandling().accessDeniedPage("/403");
 		
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
@@ -55,8 +57,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		
 		auth.jdbcAuthentication().dataSource(dataSource)
-			.usersByUsernameQuery("SELECT user.email, user.password, user.userEnabled FROM user WHERE user.email=?")
-			.authoritiesByUsernameQuery("SELECT role.email,role.RoleDesc, FROM role WHERE role.email=?");
+			.usersByUsernameQuery("SELECT USERS.EMAIL, USERS.PASSWORD, USERS.USERENABLED FROM USERS WHERE USERS.EMAIL=?")
+			.authoritiesByUsernameQuery("SELECT ROLE.EMAIL, ROLE.ROLEDESC, FROM ROLE WHERE ROLE.EMAIL=?");
 	}
 
 }

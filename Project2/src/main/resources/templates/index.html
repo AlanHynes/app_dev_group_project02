@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://ww.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security3">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
 	<h1>HELLO THERE <span th:text="${name}"></span></h1>
-
+	<span sec:authorize="isAuthenticated()">LOGGED IN</span>
 	<form action="/action_page.php">
 		First name:<br> 
 		<input type="text" name="firstname" value="Mickey"> 
