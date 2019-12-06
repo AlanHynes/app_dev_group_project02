@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
@@ -19,5 +19,38 @@
 		<td th:text="${user.jobDate}">Job Date</td>
 	</tr>
 </table>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{jobs.welcome}">View Jobs</span> <span th:text="${name}"></span></h1>
+	</header>
+	<table>
+		<tr>
+			<th th:text="#{county.id}">ID</th>
+			<th th:text="#{county.county}">County</th>
+			<th th:text="#{county.id}">Job ID</th>
+			<th>Job Name</th>
+			<th>Job Description</th>
+			<th>Job Date</th>
+		</tr>
+		<!-- th:class is only used for styling.
+		     iterationCount does not have to be used - you could leave it out.   
+		 -->	
+		<tr th:each="county,iterationCount : ${counties}" th:class="${iterationCount.odd}? 'odd'" th:object="${county}"	>			
+			<td th:text="*{countyId}">1</td>
+			<td><a th:text="*{countyName}" th:href="@{showcounty/} + *{countyId}">County</a></td>
+		</tr>
+	</table>
+	
+	<footer th:insert="fragments.html :: footer"></footer>
+
 </body>
 </html>

@@ -5,18 +5,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>HELLO THERE <span th:text="${name}"></span></h1>
-	<span sec:authorize="isAuthenticated()">LOGGED IN</span>
-	<form action="/action_page.php">
-		First name:<br> 
-		<input type="text" name="firstname" value="Mickey"> 
-		<br> 
-		Last name:
-		<br> 
-		<input type="text" name="lastname" value="Mouse"> 
-		<br><br> 
-		<input type="submit" value="Submit">
-	</form>
 
+	<span sec:authorize="isAuthenticated()">LOGGED IN</span>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+	</header>
+	<main>
+		<h1><span th:text="#{index.welcome}">WELCOME</span></h1>
+	</main>
+	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
 </body>
 </html>
