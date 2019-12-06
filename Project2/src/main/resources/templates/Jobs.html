@@ -1,56 +1,33 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<table>
-	<tr>
-		<th>Job ID</th>
-		<th>Job Name</th>
-		<th>Job Description</th>
-		<th>Job Date</th>
-	</tr>
-	<tr>
-		<td th:text="${user.jobID}">Job ID</td>
-		<td th:text="${user.jobname}">Job Name</td>
-		<td th:text="${user.jobDesc}">Job Description</td>
-		<td th:text="${user.jobDate}">Job Date</td>
-	</tr>
-</table>
-</body>
-</html> -->
-
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <div th:insert="fragments.html :: head"></div>
-
+<meta charset="ISO-8859-1">
 <body>
+
 <header>
 		<div th:insert="fragments.html :: menu"></div>
-		<h1><span th:text="#{jobs.welcome}">View Jobs</span> <span th:text="${name}"></span></h1>
+		<h1> Jobs</h1>
 	</header>
-	<table>
-		<tr>
-			<th th:text="#{county.id}">ID</th>
-			<th th:text="#{county.county}">County</th>
-			<th th:text="#{county.id}">Job ID</th>
-			<th>Job Name</th>
-			<th>Job Description</th>
-			<th>Job Date</th>
-		</tr>
-		<!-- th:class is only used for styling.
-		     iterationCount does not have to be used - you could leave it out.   
-		 -->	
-		<tr th:each="county,iterationCount : ${counties}" th:class="${iterationCount.odd}? 'odd'" th:object="${county}"	>			
-			<td th:text="*{countyId}">1</td>
-			<td><a th:text="*{countyName}" th:href="@{showcounty/} + *{countyId}">County</a></td>
+
+	<table border="1">
+	 	<tr>
+			<th >JobID</th>
+			<th th:text="#{jobs.jobname}">Job Name</th>
+			<th th:text="#{jobs.jobDesc}">Job Description</th>
+			<th >Job Date</th>
+		</tr> 
+		<tr th:each="job: ${jobs}">			
+			<td th:utext="${job.jobID}">JobID</td>
+ 			<td th:utext="${job.jobname}">Job Name</td>
+			<td th:utext="${job.jobDesc}">Job Description</td>
+			<td th:utext="${job.jobDate}">Job Date</td>
 		</tr>
 	</table>
 	
-	<footer th:insert="fragments.html :: footer"></footer>
+	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
 
 </body>
 </html>
