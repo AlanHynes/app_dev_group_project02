@@ -10,7 +10,10 @@
 <div th:insert="fragments.html :: head"></div>
 
 <body>
-	<header><div th:insert="fragments.html :: menu"></div><h1><span th:text="#{index.welcome}">WELCOME</span></h1></header>
+	<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1><span th:text="#{index.welcome}">WELCOME</span></h1>
+	</header>
 
 	<div class="login-page">
 		<div class="form">
@@ -27,5 +30,6 @@
 			</form>
 		</div>
 	</div>
+	<footer th:insert="fragments.html :: footer"></footer>
 </body>
 </html>
