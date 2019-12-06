@@ -37,7 +37,7 @@ public class JobServiceImplementation implements JobService{
 	@Override
 	public List<Job> listInAlphabeticalOrder() {
 		// TODO Auto-generated method stub
-		return null;
+		return jobDAO.findAllByOrderByJobnameAsc();
 	}
 
 }
