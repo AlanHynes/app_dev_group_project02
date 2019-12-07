@@ -32,14 +32,15 @@ public class Users {
 	@Column(nullable=false)
 	private String phoneNum;
 
-	@OneToOne
-	@JoinColumn(name="roleEmail",nullable = false)
-	Role userRole;
+	//@OneToOne
+	//@JoinColumn(name="roleEmail",nullable = false)
+	@Column(nullable=false)
+	String userRole;
 
 	@Column
 	boolean userEnabled;
 
-	public Users(String name, String email, String password, String phoneNum, Role userRole, boolean userEnabled) {
+	public Users(String name, String email, String password, String phoneNum, String userRole, boolean userEnabled) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -55,6 +56,7 @@ public class Users {
 				+ ", phoneNum=" + phoneNum + ", userRole=" + userRole + ", userEnabled=" + userEnabled + "]");
 		return s.toString();
 	}
+	
 
 
 }

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>User Database</title>
-</head>
+<div th:insert="fragments.html :: head"></div>
+
 <body>
 <table>
 	<tr>
 		<th>User ID</th>
-		<th>Name</th>
-		<th>Email</th>
-		<th>Password</th>
-		<th>Phone Number</th>
+		<th>User Name</th>
+		<th>User Email</th>
+		<th>User Pass</th>
+		<th>User Phone</th>
+		<th>User Role</th>
 	</tr>
 	<tr>
 		<td th:text="${user.userID}">User ID</td>
 		<td th:text="${user.name}">User Name</td>
 		<td th:text="${user.email}">User Email</td>
-		<td th:text="${user.password}">User Password</td>
-		<td th:text="${user.phoneNum}">User Phone Number</td>
-	</tr>
+		<td th:text="${user.password}">User Pass</td>
+		<td th:text="${user.phoneNum}">User Phone</td>
+		<td th:text="${user.userRole}">User Role</td>
+			</tr>
 </table>
+	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
+
 </body>
 </html>

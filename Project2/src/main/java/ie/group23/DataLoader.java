@@ -40,9 +40,13 @@ public class DataLoader implements ApplicationRunner {
 		Role role3 = new Role("tom@eircom.net","ROLE_USER");
 		roleDao.save(role3);
 
-		Users Mary = new Users("Mary", "mary@hotmail.com", passwordEncoder.encode("password"), "0823409283", role1, true);
-		Users John = new Users("John", "john@yahoo.com", passwordEncoder.encode("password"), "0862546790", role2, true);
-		Users Tom = new Users("Tom", "tom@eircom.net", passwordEncoder.encode("password"), "0875418053", role3, true);
+		Users Mary = new Users("Mary", "mary@hotmail.com", passwordEncoder.encode("password"), "0823409283", "ROLE_USER", true);
+		Users John = new Users("John", "john@yahoo.com", passwordEncoder.encode("password"), "0862546790", "ROLE_USER", true);
+		Users Tom = new Users("Tom", "tom@eircom.net", passwordEncoder.encode("password"), "0875418053", "ROLE_USER", true);
+		
+//		Users Mary = new Users("Mary", "mary@hotmail.com", passwordEncoder.encode("password"), "0823409283");
+//		Users John = new Users("John", "john@yahoo.com", passwordEncoder.encode("password"), "0862546790");
+//		Users Tom = new Users("Tom", "tom@eircom.net", passwordEncoder.encode("password"), "0875418053");
 
 		Mary = usersService.save(Mary);
 		log.info("LOMBOK TESTING: " + Mary);
