@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:insert="fragments.html :: head"></div>
+
+<body>
+<table>
+	<tr>
+		<th>Bid ID</th>
+		<th>Bid amount</th>
+		<th>Bid job</th>
+		<th>Bid user</th>
+	</tr>
+	<tr>
+		<td th:text="${bid.bidID}">Bid ID</td>
+		<td th:text="${bid.bidAmount}">Bid amount</td>
+		<td th:text="${bid.jobID}">Bid job</td>
+		<td th:text="${bid.userID}">Bid user</td>
+			</tr>
+</table>
+	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
+
+</body>
+</html>
+
+

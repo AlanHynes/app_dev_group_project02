@@ -13,5 +13,5 @@ public interface JobService {
 	List<Job> listInAlphabeticalOrder(); 
 	//String findCountyName(int id);
 	//List<County> findCountiesWithTownName(String townName);
-	Job save(Job user) ;
+	Job save(Job user);
 }

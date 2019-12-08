@@ -6,10 +6,13 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import ie.group23.dao.BidDAO;
 import ie.group23.dao.RoleDAO;
+import ie.group23.domain.Bid;
 import ie.group23.domain.Job;
 import ie.group23.domain.Role;
 import ie.group23.domain.Users;
+import ie.group23.services.BidService;
 import ie.group23.services.JobService;
 import ie.group23.services.UsersService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +29,9 @@ public class DataLoader implements ApplicationRunner {
 	
 	@Autowired
 	RoleDAO roleDao;
+	
+	@Autowired
+	BidService bidService;
 
 	@Autowired
 	PasswordEncoder passwordEncoder;
@@ -34,11 +40,16 @@ public class DataLoader implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		
 		Role role1 = new Role("mary@hotmail.com","ROLE_USER");
+		Role rol4 = new Role("snsdv", null);
 		roleDao.save(role1);
 		Role role2 = new Role("john@yahoo.com","ROLE_USER");
 		roleDao.save(role2);
 		Role role3 = new Role("tom@eircom.net","ROLE_USER");
 		roleDao.save(role3);
+		
+		Bid bid1 = new Bid(12.00, 1, 1);
+		bid1 = bidService.save(bid1);
+		log.info("BID TESTING: " + bid1);
 
 		Users Mary = new Users("Mary", "mary@hotmail.com", passwordEncoder.encode("password"), "0823409283", "ROLE_USER", true);
 		Users John = new Users("John", "john@yahoo.com", passwordEncoder.encode("password"), "0862546790", "ROLE_USER", true);
