@@ -3,6 +3,7 @@
 <div th:insert="fragments.html :: head"></div>
 
 <body>
+<h1>Hello</h1>
 <table>
 	<tr>
 		<th>Bid ID</th>
@@ -13,8 +14,8 @@
 	<tr>
 		<td th:text="${bid.bidID}">Bid ID</td>
 		<td th:text="${bid.bidAmount}">Bid amount</td>
-		<td th:text="${bid.jobID}">Bid job</td>
-		<td th:text="${bid.userID}">Bid user</td>
+		<td th:text="${bid.job.jobID}">Bid job</td>
+		<td th:text="${bid.user.userID}">Bid user</td>
 			</tr>
 </table>
 	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
