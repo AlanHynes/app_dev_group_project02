@@ -3,6 +3,7 @@ package ie.group23.formobjects;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import ie.group23.domain.Users;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,4 +21,5 @@ public class JobForm {
 	private int jobID;
 	private String jobDesc;
 	private String jobDate;
+	private Users user;
 }

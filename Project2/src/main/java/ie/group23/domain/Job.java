@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,11 +32,15 @@ public class Job {
 	@Column(nullable=false)
 	private String jobDate;
 	
-	public Job(String jobname, String jobDesc, String jobDate) {
+	@ManyToOne()
+    private Users user;
+	
+	public Job(String jobname, String jobDesc, String jobDate, Users user) {
 		super();
 		this.jobname = jobname;
 		this.jobDesc = jobDesc;
 		this.jobDate = jobDate;
+		this.user = user;
 	}
 
 	@Override
