@@ -12,20 +12,31 @@
 		<h1><span th:text="#{jobs.Jobs}">Jobs</span></h1>
 	</header>
 
-	<table border="1">
-	 	<tr>
-			<th th:text="#{jobs.jobid}">JobID</th>
-			<th th:text="#{jobs.jobname}">Job Name</th>
-			<th th:text="#{jobs.jobDesc}">Job Description</th>
-			<th >Job Date</th>
-		</tr> 
-		<tr th:each="job: ${jobs}">			
-			<td th:utext="${job.jobID}">JobID</td>
- 			<td th:utext="${job.jobname}">Job Name</td>
-			<td th:utext="${job.jobDesc}">Job Description</td>
-			<td th:utext="${job.jobDate}">Job Date</td>
-		</tr>
-	</table>
+
+		<table>
+		 	<tr>
+				<th th:text="#{jobs.jobid}">JobID</th>
+				<th th:text="#{jobs.jobname}">Job Name</th>
+				<th th:text="#{jobs.jobDesc}">Job Description</th>
+				<th >Job Date</th>
+			</tr> 
+			<tr th:each="job: ${jobs}">			
+				<td th:utext="${job.jobID}">JobID</td>
+	 			<td th:utext="${job.jobname}">Job Name</td>
+				<td th:utext="${job.jobDesc}">Job Description</td>
+				<td th:utext="${job.jobDate}">Job Date</td>
+				<!-- <td><input type="button" <a th:href="@{'/showbid/' + ${job.jobID}}"></a>Place Bid</td> -->
+				<!-- <td><button onclick="window.location.href = @{'/showbid/' + ${job.jobID}}">Bid</button></td>-->
+				<td><form action="#" th:action="@{'/showbid/' + ${job.jobID}}" method="get">
+                <button th:id="'table_entry_childs_button_' + ${job.jobID}" type="submit">
+                    <i>Bid</i>
+                </button>
+            </form></td>
+				
+			</tr>
+		</table>
+		
+
 	
 	<footer th:insert="fragments.html :: footer"></footer>
 
