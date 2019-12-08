@@ -1,5 +1,7 @@
 package ie.group23.domain;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,22 +32,22 @@ public class Job {
 	@Column(nullable=false)
 	private String jobDesc;
 	@Column(nullable=false)
-	private String jobDate;
+	private LocalDate localDate;
 	
 	@ManyToOne()
     private Users user;
 	
-	public Job(String jobname, String jobDesc, String jobDate, Users user) {
+	public Job(String jobname, String jobDesc, LocalDate localDate, Users user) {
 		super();
 		this.jobname = jobname;
 		this.jobDesc = jobDesc;
-		this.jobDate = jobDate;
+		this.localDate = localDate;
 		this.user = user;
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder s = new StringBuilder("Job [jobID=" + jobID + ", jobname=" + jobname + ", jobDesc=" + jobDesc + ", jobDate=" + jobDate + "]");
+		StringBuilder s = new StringBuilder("Job [jobID=" + jobID + ", jobname=" + jobname + ", jobDesc=" + jobDesc + ", localDate=" + localDate + "]");
 	
 		return s.toString();
 	}

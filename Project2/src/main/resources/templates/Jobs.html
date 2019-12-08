@@ -24,7 +24,7 @@
 				<td th:utext="${job.jobID}">JobID</td>
 	 			<td th:utext="${job.jobname}">Job Name</td>
 				<td th:utext="${job.jobDesc}">Job Description</td>
-				<td th:utext="${job.jobDate}">Job Date</td>
+				<td th:utext="${job.localDate}">Job Date</td>
 				<!-- <td><input type="button" <a th:href="@{'/showbid/' + ${job.jobID}}"></a>Place Bid</td> -->
 				<!-- <td><button onclick="window.location.href = @{'/showbid/' + ${job.jobID}}">Bid</button></td>-->
 				<td><form action="#" th:action="@{'/showbid/' + ${job.jobID}}" method="get">
