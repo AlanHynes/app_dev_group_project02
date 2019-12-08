@@ -81,7 +81,7 @@ public class DataLoader implements ApplicationRunner {
 		bid1 = bidService.save(bid2);
 		log.info("BID TESTING: " + bid2);
 		
-		Bid bid3 = new Bid(12.00, Tom, job3);
+		Bid bid3 = new Bid(14.50, Tom, job3);
 		bid1 = bidService.save(bid3);
 		log.info("BID TESTING: " + bid3);
 		
