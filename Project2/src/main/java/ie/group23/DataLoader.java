@@ -74,15 +74,14 @@ public class DataLoader implements ApplicationRunner {
 		log.info("LOMBOK TESTING: " + job3);
 
 		Bid bid1 = new Bid(12.00, Mary, job1);
+		Bid bid2 = new Bid(20.00, John, job2);
+		Bid bid3 = new Bid(14.50, Tom, job3);
+		
 		bid1 = bidService.save(bid1);
 		log.info("BID TESTING: " + bid1);
-		
-		Bid bid2 = new Bid(20.00, John, job2);
-		bid1 = bidService.save(bid2);
+		bid2 = bidService.save(bid2);
 		log.info("BID TESTING: " + bid2);
-		
-		Bid bid3 = new Bid(14.50, Tom, job3);
-		bid1 = bidService.save(bid3);
+		bid3 = bidService.save(bid3);
 		log.info("BID TESTING: " + bid3);
 		
 	}
