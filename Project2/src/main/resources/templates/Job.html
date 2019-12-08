@@ -3,20 +3,27 @@
 <div th:insert="fragments.html :: head"></div>
 
 <body>
-<table>
-	<tr>
-		<th>Job ID</th>
-		<th>Job Name</th>
-		<th>Job Desc</th>
-		<th>Job Date</th>
-	</tr>
-	<tr>
-		<td th:text="${job.jobID}">Job ID</td>
-		<td th:text="${job.jobname}">Job Name</td>
-		<td th:text="${job.jobDesc}">Job Desc</td>
-		<td th:text="${job.jobDate}">Job Date</td>
-			</tr>
-</table>
+		<form id="newJobForm" method="post" th:action="@{/showbid/1}" th:object="${bidForm}">
+			<table>
+				<tr>
+					<th>Job ID</th>
+					<th>Job Name</th>
+					<th>Job Desc</th>
+					<th>Job Date</th>
+					<th>User Email</th>
+				</tr>
+				<tr>
+					<td th:text="${job.jobID}">Job ID</td>
+					<td th:text="${job.jobname}">Job Name</td>
+					<td th:text="${job.jobDesc}">Job Desc</td>
+					<td th:text="${job.jobDate}">Job Date</td>
+					<td th:text="${job.user.email}">User Email</td>
+					
+				</tr>
+			</table>
+
+		<input type="submit"/>
+		</form>
 	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
 
 </body>

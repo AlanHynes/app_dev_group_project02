@@ -27,9 +27,9 @@
 				<td th:utext="${job.jobDate}">Job Date</td>
 				<!-- <td><input type="button" <a th:href="@{'/showbid/' + ${job.jobID}}"></a>Place Bid</td> -->
 				<!-- <td><button onclick="window.location.href = @{'/showbid/' + ${job.jobID}}">Bid</button></td>-->
-				<td><form action="#" th:action="@{'/showbid/' + ${job.jobID}}" method="get">
+				<td><form action="#" th:action="@{'/showjob/' + ${job.jobID}}" method="get">
                 <button th:id="'table_entry_childs_button_' + ${job.jobID}" type="submit">
-                    <i>Bid</i>
+                    <i>View Job</i>
                 </button>
             </form></td>
 				
