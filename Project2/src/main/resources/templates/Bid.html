@@ -3,21 +3,17 @@
 <div th:insert="fragments.html :: head"></div>
 
 <body>
+
+
+<form method="POST" th:action="@{/bid(jobID=${param.jobID})}" th:object="${bid}">
 <h1>Hello</h1>
-<table>
-	<tr>
-		<th>Bid ID</th>
-		<th>Bid amount</th>
-		<th>Bid job</th>
-		<th>Bid user</th>
-	</tr>
-	<tr>
-		<td th:text="${bid.bidID}">Bid ID</td>
-		<td th:text="${bid.bidAmount}">Bid amount</td>
-		<td th:text="${bid.job.jobID}">Bid job</td>
-		<td th:text="${bid.user.userID}">Bid user</td>
-			</tr>
-</table>
+
+<label for="bidAmount" th:text="#{newBid.bidAmount}" >Enter Bid</label>
+<input min="0" required type="number" th:field="*{bidAmount}"/>
+<span th:if="${#fields.hasErrors('bidAmount')}" th:errors="*{bidAmount}" >Error</span>
+
+</form>
+
 	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
 
 </body>

@@ -3,7 +3,7 @@
 <div th:insert="fragments.html :: head"></div>
 
 <body>
-		<form id="newJobForm" method="post" th:action="@{/showbid/1}" th:object="${bidForm}">
+		<form id="newBidForm" method="POST" th:action="@{/bid}" th:object="${bidForm}">
 			<table>
 				<tr>
 					<th>Job ID</th>
