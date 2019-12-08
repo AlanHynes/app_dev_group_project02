@@ -16,8 +16,8 @@
 		<input type="text" th:field="*{jobname}"/><span th:if="${#fields.hasErrors('jobname')}" th:errors="*{jobname}" >Error</span> 
 		<label for="jobDesc" th:text="#{newjob.jobDesc}" ></label>
 		<input type="text" th:field="*{jobDesc}"/><span th:if="${#fields.hasErrors('jobDesc')}" th:errors="*{jobDesc}" >Error</span>
-		<label for="jobDate" th:text="#{newjob.jobDate}" ></label>
-		<input type="text" th:field="*{jobDate}"/><span th:if="${#fields.hasErrors('jobDate')}" th:errors="*{jobDate}" >Error</span>
+		<label for="jobDate" th:text="#{newjob.localDate}" ></label>
+		<input type="text" th:field="*{localDate}"/><span th:if="${#fields.hasErrors('localDate')}" th:errors="*{localDate}" >Error</span>
 		
 		<br>
 		<input type="submit" th:value="#{newjob.addJob}"/>

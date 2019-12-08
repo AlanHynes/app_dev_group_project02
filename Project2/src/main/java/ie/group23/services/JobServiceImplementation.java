@@ -40,4 +40,15 @@ public class JobServiceImplementation implements JobService{
 		return jobDAO.findAllByOrderByJobnameAsc();
 	}
 
+//	@Override
+//	public void closeJob(int jobID) {
+//		// TODO Auto-generated method stub
+//		Job job = jobDAO.findById(jobID).orElse(null);
+//		if(job != null) {
+//			job.setClosed(true);
+//			jobDAO.save(job);
+//		}
+//		
+//	}
+
 }

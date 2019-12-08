@@ -38,20 +38,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		return new BCryptPasswordEncoder();
 	}
 	
-//	@Autowired
-//	PasswordEncoder passwordEncoder;
-	
 	@Autowired
 	DataSource dataSource;
-	
-//	@Override
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-//		String encodedPassword = passwordEncoder.encode("password");
-//		
-//		auth.inMemoryAuthentication()
-//			.withUser("user").password(encodedPassword).roles("USER").and()
-//			.withUser("admin").password(encodedPassword).roles("USER","ADMIN");
-//	}
+
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{

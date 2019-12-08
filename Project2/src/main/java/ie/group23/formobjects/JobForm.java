@@ -25,4 +25,5 @@ public class JobForm {
 	private String jobDesc;
 	private LocalDate localDate;
 	private Users user;
+//	private boolean isClosed;
 }

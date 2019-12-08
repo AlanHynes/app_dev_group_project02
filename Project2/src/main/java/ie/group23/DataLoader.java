@@ -64,12 +64,13 @@ public class DataLoader implements ApplicationRunner {
 		Tom = usersService.save(Tom);
 		log.info("LOMBOK TESTING: " + Tom);
 		
+//		Job job1 = new Job("Bathroom Pluming", "Clogged pipes in the bathroom", LocalDate.now().minusDays(20), Mary, false);
 		Job job1 = new Job("Bathroom Pluming", "Clogged pipes in the bathroom", LocalDate.now().minusDays(20), Mary);
 		Job job2 = new Job("Fittings", "Wardrobe to be fitted into the bedroom", LocalDate.now().minusDays(15), John);
-		Job job3 = new Job("Grinds", "Need some help with maths equations", LocalDate.now().minusDays(22), Tom);
-		Job job4 = new Job("House work", "New shed to be built", LocalDate.now().minusDays(21), Mary);
+		Job job3 = new Job("Grinds", "Need some help with maths equations", LocalDate.now().minusDays(10), Tom);
+		Job job4 = new Job("House work", "New shed to be built", LocalDate.now().minusDays(14), Mary);
 		Job job5 = new Job("Phone problem", "Broken vscreen", LocalDate.now().minusDays(5), Mary);
-		Job job6 = new Job("Broadband", "Like a new broadband package", LocalDate.now().minusDays(29), Mary);
+		Job job6 = new Job("Broadband", "Like a new broadband package", LocalDate.now().minusDays(13), Mary);
 
 		job1 = jobService.save(job1);
 		log.info("LOMBOK TESTING: " + job1);

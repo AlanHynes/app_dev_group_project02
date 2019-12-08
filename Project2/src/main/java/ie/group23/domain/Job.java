@@ -8,9 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,12 +34,17 @@ public class Job {
 	@ManyToOne()
     private Users user;
 	
+//	@Column(columnDefinition = "default false")
+//	private boolean isClosed;
+	
+//	public Job(String jobname, String jobDesc, LocalDate localDate, Users user, boolean isClosed) {
 	public Job(String jobname, String jobDesc, LocalDate localDate, Users user) {
 		super();
 		this.jobname = jobname;
 		this.jobDesc = jobDesc;
 		this.localDate = localDate;
 		this.user = user;
+//		this.isClosed = isClosed;
 	}
 
 	@Override
