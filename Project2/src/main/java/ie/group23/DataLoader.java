@@ -65,6 +65,9 @@ public class DataLoader implements ApplicationRunner {
 		Job job1 = new Job("Bathroom Pluming", "Clogged pipes in the bathroom", "2019-11-15", Mary);
 		Job job2 = new Job("Fittings", "Wardrobe to be fitted into the bedroom", "2019-12-05", John);
 		Job job3 = new Job("Grinds", "Need some help with maths equations", "2019-12-01", Tom);
+		Job job4 = new Job("House work", "New shed to be built", "2015-10-17", Mary);
+		Job job5 = new Job("Phone problem", "Broken vscreen", "2013-09-01", Mary);
+		Job job6 = new Job("Broadband", "Like a new broadband package", "2012-12-06", Mary);
 
 		job1 = jobService.save(job1);
 		log.info("LOMBOK TESTING: " + job1);
@@ -72,7 +75,13 @@ public class DataLoader implements ApplicationRunner {
 		log.info("LOMBOK TESTING: " + job2);
 		job3 = jobService.save(job3);
 		log.info("LOMBOK TESTING: " + job3);
-
+		job4 = jobService.save(job4);
+		log.info("LOMBOK TESTING: " + job4);
+		job5 = jobService.save(job5);
+		log.info("LOMBOK TESTING: " + job5);
+		job6 = jobService.save(job6);
+		log.info("LOMBOK TESTING: " + job6);
+		
 		Bid bid1 = new Bid(12.00, Mary, job1);
 		Bid bid2 = new Bid(20.00, John, job2);
 		Bid bid3 = new Bid(14.50, Tom, job3);
