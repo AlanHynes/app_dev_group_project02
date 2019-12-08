@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<div th:insert="fragments.html :: head"></div>
+<meta charset="ISO-8859-1">
+<body>
+
+<header>
+		<div th:insert="fragments.html :: menu"></div>
+		<h1>Bid on job</h1>
+	</header>
+	<form id="newBidForm" method="post" th:action="@{/newbid}" th:object="${bidForm}">
+		<label for="jobname" th:text="#{newjob.jobname}" ></label> 
+		<input type="text" th:field="*{jobname}"/><span th:if="${#fields.hasErrors('jobname')}" th:errors="*{jobname}" >Error</span> 
+		<label for="jobDesc" th:text="#{newjob.jobDesc}" ></label>
+		<input type="text" th:field="*{jobDesc}"/><span th:if="${#fields.hasErrors('jobDesc')}" th:errors="*{jobDesc}" >Error</span>
+		<label for="jobDate" th:text="#{newjob.jobDate}" ></label>
+		<input type="text" th:field="*{jobDate}"/><span th:if="${#fields.hasErrors('jobDate')}" th:errors="*{jobDate}" >Error</span>
+		
+		<br>
+		<input type="submit" th:value="#{newjob.addJob}"/>
+	</form>
+	<!-- This message is shown if the ${duplicate} variable was created. -->
+	<h3 class="error" th:if="${duplicate}" th:text="#{newjob.duplicate}">Error</h3>
+	
+	<footer th:insert="fragments.html :: footer"></footer>
+
+</body>
+</html>
