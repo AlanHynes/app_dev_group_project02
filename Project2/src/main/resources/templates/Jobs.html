@@ -9,12 +9,12 @@
 
 <header>
 		<div th:insert="fragments.html :: menu"></div>
-		<h1> Jobs</h1>
+		<h1><span th:text="#{jobs.Jobs}">Jobs</span></h1>
 	</header>
 
 	<table border="1">
 	 	<tr>
-			<th >JobID</th>
+			<th th:text="#{jobs.jobid}">JobID</th>
 			<th th:text="#{jobs.jobname}">Job Name</th>
 			<th th:text="#{jobs.jobDesc}">Job Description</th>
 			<th >Job Date</th>
@@ -27,7 +27,7 @@
 		</tr>
 	</table>
 	
-	<!-- <footer th:insert="fragments.html :: footer"></footer> -->
+	<footer th:insert="fragments.html :: footer"></footer>
 
 </body>
 </html>

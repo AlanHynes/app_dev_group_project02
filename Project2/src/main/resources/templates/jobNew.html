@@ -12,9 +12,7 @@
 		<h1>Create Job</h1>
 	</header>
 	<form id="newJobForm" method="post" th:action="@{/newjob}" th:object="${jobForm}">
-		<label for="jobname" th:text="#{newjob.jobname}" ></label>
-			                                         <!-- The span is connected to the countyName field through th:errors. It appears if there was a binding problem and  -->
-			                                         <!--  displays the Size.countyName message from messages.properties --> 
+		<label for="jobname" th:text="#{newjob.jobname}" ></label> 
 		<input type="text" th:field="*{jobname}"/><span th:if="${#fields.hasErrors('jobname')}" th:errors="*{jobname}" >Error</span> 
 		<label for="jobDesc" th:text="#{newjob.jobDesc}" ></label>
 		<input type="text" th:field="*{jobDesc}"/><span th:if="${#fields.hasErrors('jobDesc')}" th:errors="*{jobDesc}" >Error</span>
