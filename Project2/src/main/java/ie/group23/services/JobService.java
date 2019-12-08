@@ -14,4 +14,5 @@ public interface JobService {
 	//String findCountyName(int id);
 	//List<County> findCountiesWithTownName(String townName);
 	Job save(Job user);
+//	void closeJob(int jobID);
 }

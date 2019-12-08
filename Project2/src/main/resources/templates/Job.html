@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <div th:insert="fragments.html :: head"></div>
 
+<header>
+		<div th:insert="fragments.html :: menu"></div>
+</header>
+
 <body>
+
 		<form id="newJobForm" method="post" th:action="@{/showbid/1}" th:object="${bidForm}">
 			<table>
 				<tr>
