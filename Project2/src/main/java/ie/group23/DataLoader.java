@@ -46,10 +46,6 @@ public class DataLoader implements ApplicationRunner {
 		roleDao.save(role2);
 		Role role3 = new Role("tom@eircom.net","ROLE_USER");
 		roleDao.save(role3);
-		
-		Bid bid1 = new Bid(12.00, 1, 1);
-		bid1 = bidService.save(bid1);
-		log.info("BID TESTING: " + bid1);
 
 		Users Mary = new Users("Mary", "mary@hotmail.com", passwordEncoder.encode("password"), "0823409283", "ROLE_USER", true);
 		Users John = new Users("John", "john@yahoo.com", passwordEncoder.encode("password"), "0862546790", "ROLE_USER", true);
@@ -65,10 +61,10 @@ public class DataLoader implements ApplicationRunner {
 		log.info("LOMBOK TESTING: " + John);
 		Tom = usersService.save(Tom);
 		log.info("LOMBOK TESTING: " + Tom);
-
-		Job job1 = new Job("Bathroom Pluming", "Clogged pipes in the bathroom", "2019-11-15");
-		Job job2 = new Job("Fittings", "Wardrobe to be fitted into the bedroom", "2019-12-05");
-		Job job3 = new Job("Grinds", "Need some help with maths equations", "2019-12-01");
+		
+		Job job1 = new Job("Bathroom Pluming", "Clogged pipes in the bathroom", "2019-11-15", Mary);
+		Job job2 = new Job("Fittings", "Wardrobe to be fitted into the bedroom", "2019-12-05", John);
+		Job job3 = new Job("Grinds", "Need some help with maths equations", "2019-12-01", Tom);
 
 		job1 = jobService.save(job1);
 		log.info("LOMBOK TESTING: " + job1);
@@ -77,6 +73,18 @@ public class DataLoader implements ApplicationRunner {
 		job3 = jobService.save(job3);
 		log.info("LOMBOK TESTING: " + job3);
 
+		Bid bid1 = new Bid(12.00, Mary, job1);
+		bid1 = bidService.save(bid1);
+		log.info("BID TESTING: " + bid1);
+		
+		Bid bid2 = new Bid(20.00, John, job2);
+		bid1 = bidService.save(bid2);
+		log.info("BID TESTING: " + bid2);
+		
+		Bid bid3 = new Bid(12.00, Tom, job3);
+		bid1 = bidService.save(bid3);
+		log.info("BID TESTING: " + bid3);
+		
 	}
 
 }
