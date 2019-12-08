@@ -58,7 +58,7 @@ public class JobController {
 		if (binding.hasErrors())
 			return "jobNew";
 		// countyForm has the new county's name so let's use it to create a County entity object.
-		Job job = new Job(jobForm.getJobID(), jobForm.getJobname(), jobForm.getJobDesc(), jobForm.getJobDate(), jobForm.getUser());
+		Job job = new Job(jobForm.getJobID(), jobForm.getJobname(), jobForm.getJobDesc(), jobForm.getLocalDate(), jobForm.getUser());
 		job = jobservice.save(job);
 		
 		if (job !=null )
