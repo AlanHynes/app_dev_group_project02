@@ -3,8 +3,8 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="ie.group23.domain.Users" project="Project2" 
     file="/Project2/src/main/java/ie/group23/domain/Users.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="454" y="242"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="404" width="270" x="319" y="-14"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    

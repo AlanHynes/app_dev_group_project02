@@ -21,8 +21,8 @@
   </class>  
   <class id="3" language="java" name="ie.group23.formobjects.UserForm" project="Project2" 
     file="/Project2/src/main/java/ie/group23/formobjects/UserForm.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="477" width="281" x="475" y="-186"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <position height="438" width="281" x="475" y="-186"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
