@@ -18,6 +18,6 @@ public class BidForm {
 	private int bidID;
 
 	private double bidAmount;
-	private int job;
-	private int user;
+	private Job job;
+	private Users user;
 }

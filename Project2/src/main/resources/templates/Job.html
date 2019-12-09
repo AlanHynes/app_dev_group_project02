@@ -8,8 +8,7 @@
 </header>
 
 <body>
-
-		<form id="newJobForm" method="post" th:action="@{/showbid/1}" th:object="${bidForm}">
+		<form id="newBidForm" method="POST" th:action="@{/bid}" th:object="${bidForm}">
 			<table>
 				<tr>
 					<th>Job ID</th>
@@ -23,7 +22,7 @@
 					<td th:text="${job.jobname}">Job Name</td>
 					<td th:text="${job.jobDesc}">Job Desc</td>
 					<td th:text="${job.localDate}">Job Date</td>
-					
+
 					<td th:text="${job.user.email}">User Email</td>
 
 				</tr>
